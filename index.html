@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Vitor Vigilato</title>
     <style>
         /* Light Mode */
         :root {
@@ -17,54 +17,54 @@
 
         /* Dark Mode */
         .dark-mode {
-            --background-color: #212225;
-            --card-background: #2A2B2E;
+            --background-color: #121212;
+            --card-background: #1E1E1E;
             --text-color: #E0E0E0;
-            --border-color: #3A3B3D;
+            --border-color: #333;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Poppins", sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--background-color);
             color: var(--text-color);
-            text-align: center;
-            transition: background-color 0.3s, color 0.3s;
+            transition: all 0.3s ease-in-out;
         }
 
         .container {
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 900px;
+            margin: 50px auto;
             background: var(--card-background);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 40px;
+            border-radius: 16px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         header {
-            background: var(--card-background);
+            background: var(--background-color);
             padding: 20px;
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
+            text-align: center;
         }
 
         h1, h2 {
+            font-weight: 600;
             color: var(--text-color);
-            font-weight: normal;
         }
 
         hr {
             border: 0;
-            height: 1px;
+            height: 2px;
             background: var(--border-color);
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         a {
             color: var(--accent-color);
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
         }
 
         a:hover {
@@ -77,38 +77,48 @@
         }
 
         li {
-            padding: 8px 0;
+            padding: 12px;
             border-bottom: 1px solid var(--border-color);
         }
 
         .toggle-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
             background: var(--accent-color);
             color: var(--text-color);
             border: none;
-            padding: 8px 12px;
-            border-radius: 5px;
+            padding: 10px 15px;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .toggle-btn:hover {
             background: var(--hover-color);
         }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            background: var(--card-background);
+            border-top: 2px solid var(--border-color);
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Personal Website</h1>
+        <h1>Vitor Vigilato</h1>
         <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Mode</button>
     </header>
     
     <div class="container">
         <section>
             <h2>About Me</h2>
-            <p>I'm a **Virtual Assistant and Bookkeeper** working remotely for international clients. I specialize in administrative support, bookkeeping, and organization, helping businesses streamline their operations. With a keen eye for detail and strong time management skills, I ensure efficiency and accuracy in every task.</p>
+            <p>I am a Virtual Assistant and Bookkeeper working remotely for international clients. I specialize in administrative support, bookkeeping, and organization, helping businesses streamline their operations.</p>
         </section>
 
         <hr>
@@ -116,10 +126,10 @@
         <section>
             <h2>Services</h2>
             <ul>
-                <li>✅ Virtual Assistance – Administrative support, email management, scheduling.</li>
-                <li>✅ Bookkeeping – Managing financial records, reconciling transactions, QuickBooks/Xero support.</li>
-                <li>✅ Data Entry – Organizing and maintaining databases with high accuracy.</li>
-                <li>✅ Document Management – Creating reports, spreadsheets, and professional presentations.</li>
+                <li>Virtual Assistance – Administrative support, email management, scheduling.</li>
+                <li>Bookkeeping – Managing financial records, reconciling transactions, QuickBooks/Xero support.</li>
+                <li>Data Entry – Organizing and maintaining databases with high accuracy.</li>
+                <li>Document Management – Creating reports, spreadsheets, and professional presentations.</li>
             </ul>
         </section>
 
@@ -127,14 +137,14 @@
 
         <section>
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-            <p>Phone: <a href="tel:+123456789">+1 (234) 567-89</a></p>
-            <p>LinkedIn: <a href="#">LinkedIn Profile</a></p>
+            <p>Email: <a href="mailto:v.vigilato@outlook.com">v.vigilato@outlook.com</a></p>
+            <p>Phone: <a href="tel:+5565999309048">+55 (65) 9 9930-9048</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/vitorvigilato/">LinkedIn Profile</a></p>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Vitor Vigilato. All rights reserved.</p>
     </footer>
 
     <script>
@@ -143,7 +153,6 @@
             localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
         }
 
-        // Load saved theme preference
         if (localStorage.getItem('darkMode') === 'enabled') {
             document.body.classList.add('dark-mode');
         }
