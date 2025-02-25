@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
     <style>
-        /* Dark Mode (Darker Version) */
+        /* Light Mode */
         :root {
+            --background-color: #F0F0F0;
+            --card-background: #FFFFFF;
+            --text-color: #212225;
+            --border-color: #D1D1D1;
+            --accent-color: #19C37D;
+            --hover-color: #16A569;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
             --background-color: #212225;
             --card-background: #2A2B2E;
             --text-color: #E0E0E0;
             --border-color: #3A3B3D;
-            --accent-color: #19C37D;
-            --hover-color: #16A569;
         }
 
         body {
@@ -22,6 +30,7 @@
             background-color: var(--background-color);
             color: var(--text-color);
             text-align: center;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .container {
@@ -34,10 +43,11 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        header, footer {
+        header {
             background: var(--card-background);
             padding: 20px;
             border-bottom: 1px solid var(--border-color);
+            position: relative;
         }
 
         h1, h2 {
@@ -70,11 +80,29 @@
             padding: 8px 0;
             border-bottom: 1px solid var(--border-color);
         }
+
+        .toggle-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .toggle-btn:hover {
+            background: var(--hover-color);
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to My Personal Website</h1>
+        <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Mode</button>
     </header>
     
     <div class="container">
@@ -108,5 +136,17 @@
     <footer>
         <p>&copy; 2025 Your Name. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+        }
+
+        // Load saved theme preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
 </body>
 </html>
